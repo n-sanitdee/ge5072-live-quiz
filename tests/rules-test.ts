@@ -2,12 +2,14 @@
 // Run: npm run emulators   (in another terminal)   then   node tests/rules-test.ts
 import {deleteApp} from 'firebase/app';
 import {get, ref, serverTimestamp, set, update} from 'firebase/database';
+import {firebaseConfig} from '../src/firebase-config.ts';
 import {EMULATOR_CONFIG, openDatabase, signInHost} from '../src/game/fb.ts';
 import {HostEngine} from '../src/game/host.ts';
 import {JoinFailed, PlayerClient, newPlayerId} from '../src/game/player.ts';
 import {DEFAULT_SETTINGS, type QuestionSet} from '../src/game/types.ts';
 
-const backend = {config: EMULATOR_CONFIG, emulatorHost: '127.0.0.1'};
+// --live runs the same checks against the real Firebase project.
+const backend = process.argv.includes('--live') ? {config: firebaseConfig} : {config: EMULATOR_CONFIG, emulatorHost: '127.0.0.1'};
 let failures = 0;
 function check(label: string, ok: boolean) {
   console.log(`${ok ? 'PASS' : 'FAIL'}  ${label}`);
