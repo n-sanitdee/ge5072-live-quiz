@@ -186,7 +186,7 @@ for (let i = 0; i < 3; i++) {
   const shown = await ios.textContent('.pts');
   check(`Q${i + 1}: phone shows the points`, shown === `+${(res.last?.pts ?? 0).toLocaleString()}`, `${shown}`);
 
-  await host.click(i === 2 ? 'button:has-text("Final results")' : 'button:has-text("Leaderboard")');
+  await host.click('.h-controls .btn.primary'); // "Leaderboard", or "Final results" after the last question
   if (i < 2) {
     await host.waitForSelector('.board li');
     await sleep(500);

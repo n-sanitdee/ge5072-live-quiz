@@ -23,7 +23,8 @@ press ⛶ for full screen.
    question, answers 1–4, time limit, correct answer number) or a `.json` set. A loaded file stays in this browser
    only; phones get each question when it is shown, and the correct answer only after time is up.
 2. **Settings (optional).** Reading time before answers open (default 5 s), streak bonus (default +100 per correct
-   answer in a row, at most +500), and whether late students may join.
+   answer in a row, at most +500), whether late students may join, and whether the leaderboard appears after each
+   question (students always see their own rank on their phone).
 3. **Create game.** The lobby shows the web address, a 6-digit PIN and a QR code. Students scan the QR code (or
    type the address and the PIN), choose a nickname and appear on screen. Click a name to remove that player.
    **Lock** stops new players from joining.
@@ -31,7 +32,8 @@ press ⛶ for full screen.
    closes when time is up or when everyone connected has answered. **Show answer now** closes it early;
    **Skip question** moves on without points.
 5. The projector shows the correct answer and how many students chose each option. **Leaderboard** shows the top 5,
-   then **Next question**. Space, Enter, → or a presentation clicker presses the gold button.
+   then **Next question** (or **Skip leaderboard → next question**). Space, Enter, → or a presentation clicker
+   presses the gold button. Answers are only taken on phones; the tiles on the projector can't be clicked.
 6. After the last question: **Final results** shows the podium (top 3) and the full ranking. Phones show each
    student's final rank. **End game** (bottom left) jumps to the final results at any time.
 7. **Finish & delete game data** deletes the nicknames, answers and scores from the database.

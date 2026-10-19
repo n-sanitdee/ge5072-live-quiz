@@ -142,8 +142,8 @@ check(
 );
 
 // All answered → closes early
-await host.next(); // board
-await host.next(); // question 1
+await host.next({skipBoard: true}); // reveal → straight to question 1
+check('"Skip leaderboard" goes straight to the next question', host.view.state.phase === 'question' && host.view.state.i === 1);
 await sleep(1200);
 await Promise.all([players[0].answer(0), players[1].answer(0)]);
 await sleep(600);

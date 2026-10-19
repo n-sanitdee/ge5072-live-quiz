@@ -325,6 +325,14 @@ function Setup({
             />
             <span>Students can join after the game has started</span>
           </label>
+          <label className="field check">
+            <input
+              type="checkbox"
+              checked={settings.leaderboard}
+              onChange={(e) => setSettings({...settings, leaderboard: e.target.checked})}
+            />
+            <span>Show the leaderboard after each question (students always see their own rank)</span>
+          </label>
           <p className="muted small">
             Points: correct = 1000 × (1 − time taken ÷ time limit ÷ 2), so 500–1000; wrong or no answer = 0 and the streak
             resets. Streak bonus: +{settings.streakStep} for the 2nd correct answer in a row, +{settings.streakStep * 2} for
@@ -381,13 +389,16 @@ function Game({engine, onClosed}: {engine: HostEngine; onClosed: () => void}) {
       case 'question':
         return {label: 'Show answer now', act: () => void engine.close()};
       case 'reveal':
-        return {label: s.i >= s.total - 1 ? 'Final results' : 'Leaderboard', act: () => void engine.next()};
+        return {
+          label: s.i >= s.total - 1 ? 'Final results' : v.settings.leaderboard !== false ? 'Leaderboard' : 'Next question',
+          act: () => void engine.next(),
+        };
       case 'board':
         return {label: s.i >= s.total - 1 ? 'Final results' : 'Next question', act: () => void engine.next()};
       default:
         return null;
     }
-  }, [s.phase, s.i, s.total, players, engine]);
+  }, [s.phase, s.i, s.total, players, engine, v.settings.leaderboard]);
 
   // Space / Enter / → = the main button (works with a presentation clicker).
   useEffect(() => {
@@ -448,6 +459,11 @@ function Game({engine, onClosed}: {engine: HostEngine; onClosed: () => void}) {
             {s.phase === 'question' && (
               <button className="btn ghost" onClick={() => void engine.skip()} title="Next question, no points for this one">
                 Skip question
+              </button>
+            )}
+            {s.phase === 'reveal' && s.i < s.total - 1 && v.settings.leaderboard !== false && (
+              <button className="btn ghost" onClick={() => void engine.next({skipBoard: true})}>
+                Skip leaderboard → next question
               </button>
             )}
             <button className="btn ghost" onClick={() => confirm('End the game now and show the final results?') && void engine.finish()}>
@@ -543,6 +559,7 @@ function QuestionScreen({v, engine}: {v: HostView; engine: HostEngine}) {
           </div>
         ) : preview ? (
           <div className="ready">
+            <div className="on-phone">📱 Get ready to answer on your phone · เตรียมตอบบนมือถือ</div>
             <div className="ready-n">{Math.ceil((s.startAt - now) / 1000)}</div>
             <div className="ready-bar">
               <div style={{animationDuration: `${v.settings.previewSec}s`}} />
@@ -551,6 +568,11 @@ function QuestionScreen({v, engine}: {v: HostView; engine: HostEngine}) {
         ) : (
           <div className="q-live">
             <div className="clock">{Math.ceil(left / 1000)}</div>
+            <div className="on-phone">
+              📱 Answer on your phone
+              <br />
+              ตอบบนมือถือ
+            </div>
             <div className="answered">
               <b>{v.answered.length}</b>
               <span>

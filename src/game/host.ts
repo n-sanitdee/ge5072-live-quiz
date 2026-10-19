@@ -266,13 +266,17 @@ export class HostEngine {
     this.patch({state, reveal: undefined, answered: []});
   }
 
-  /** Lobby → first question; reveal → leaderboard (or podium after the last); leaderboard → next question. */
-  next(): Promise<void> {
+  /**
+   * Lobby → first question; reveal → leaderboard (if turned on) or the next question, podium after the last;
+   * leaderboard → next question. `skipBoard` goes from the reveal straight to the next question.
+   */
+  next({skipBoard = false} = {}): Promise<void> {
     return this.run(async () => {
       const s = this.view.state;
       const last = s.i >= s.total - 1;
+      const board = this.view.settings.leaderboard !== false && !skipBoard;
       if (s.phase === 'lobby') await this.showQuestion(0);
-      else if (s.phase === 'reveal') await this.setPhase(last ? 'podium' : 'board');
+      else if (s.phase === 'reveal') await (last ? this.setPhase('podium') : board ? this.setPhase('board') : this.showQuestion(s.i + 1));
       else if (s.phase === 'board') await (last ? this.setPhase('podium') : this.showQuestion(s.i + 1));
     });
   }

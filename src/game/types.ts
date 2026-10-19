@@ -24,6 +24,8 @@ export type Settings = {
   previewSec: number;
   /** Let students join after the game has started. */
   lateJoin: boolean;
+  /** Show the top-5 leaderboard after each question (otherwise straight to the next question). */
+  leaderboard: boolean;
 };
 
 export const DEFAULT_SETTINGS: Settings = {
@@ -31,6 +33,7 @@ export const DEFAULT_SETTINGS: Settings = {
   streakCap: 500,
   previewSec: 5,
   lateJoin: true,
+  leaderboard: true,
 };
 
 export type Phase = 'lobby' | 'question' | 'closing' | 'reveal' | 'board' | 'podium';
