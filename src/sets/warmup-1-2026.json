@@ -1,0 +1,161 @@
+{
+  "title": "GE5072/072 Pop Quiz Warm-Up (1/2026)",
+  "questions": [
+    {
+      "q": "Job advert: 'You will often work alone, so we need someone with ______.'",
+      "answers": [
+        "independence",
+        "independent",
+        "independently",
+        "independentness"
+      ],
+      "correct": [
+        1
+      ],
+      "time": 20
+    },
+    {
+      "q": "A colleague is nervous about a presentation. Which advice is correct?",
+      "answers": [
+        "You should to speak more slowly.",
+        "Why don't you to use bigger slides?",
+        "How about practising in front of a friend?",
+        "You could starting with a short story."
+      ],
+      "correct": [
+        3
+      ],
+      "time": 30
+    },
+    {
+      "q": "You're emailing the CEO for the first time. Which sentence is TOO informal?",
+      "answers": [
+        "I am delighted to join the Finance team.",
+        "Thanks a lot – catch you later!",
+        "I would be glad to discuss the budget with you.",
+        "Please let me know if I can help in any way."
+      ],
+      "correct": [
+        2
+      ],
+      "time": 30
+    },
+    {
+      "q": "A fishing company catches tuna at sea. Which economic sector is this?",
+      "answers": [
+        "industry",
+        "primary",
+        "secondary",
+        "tertiary"
+      ],
+      "correct": [
+        2
+      ],
+      "time": 20
+    },
+    {
+      "q": "Thailand is building more wind farms and hydropower dams. It is investing in…",
+      "answers": [
+        "greenhouse gases",
+        "fossil fuels",
+        "solar panels",
+        "renewable energy"
+      ],
+      "correct": [
+        4
+      ],
+      "time": 20
+    },
+    {
+      "q": "My phone ______ while we ______ the visitors around our new building.",
+      "answers": [
+        "was ringing / showed",
+        "rang / was showing",
+        "rang / were showing",
+        "was ringing / were showing"
+      ],
+      "correct": [
+        3
+      ],
+      "time": 20
+    },
+    {
+      "q": "Customer: 'This charger is broken.' Shop assistant: 'Sorry! I ______ you a new one.'",
+      "answers": [
+        "am going to get",
+        "will get",
+        "gets",
+        "get"
+      ],
+      "correct": [
+        2
+      ],
+      "time": 20
+    },
+    {
+      "q": "The decision was made yesterday: we ______ our prices next month.",
+      "answers": [
+        "are going to raise",
+        "will raise",
+        "raise",
+        "raises"
+      ],
+      "correct": [
+        1
+      ],
+      "time": 20
+    },
+    {
+      "q": "Our profits rose by 40% this year – the strongest ______ in our history.",
+      "answers": [
+        "grow",
+        "grown",
+        "growth",
+        "growingly"
+      ],
+      "correct": [
+        3
+      ],
+      "time": 20
+    },
+    {
+      "q": "Which sentence is correct?",
+      "answers": [
+        "Our coffee is grown in Chiang Rai.",
+        "The contract was sign last week.",
+        "These bottles is recycled every week.",
+        "The email is sent yesterday."
+      ],
+      "correct": [
+        1
+      ],
+      "time": 30
+    },
+    {
+      "q": "Which sentence belongs in the ENCLOSURES part of an order confirmation letter?",
+      "answers": [
+        "Please pay by bank transfer.",
+        "Thank you for your order of 50 laptops.",
+        "We enclose a copy of our terms and conditions.",
+        "The laptops will arrive on Friday."
+      ],
+      "correct": [
+        3
+      ],
+      "time": 30
+    },
+    {
+      "q": "Which sentence is correct?",
+      "answers": [
+        "We discussed about the new prices.",
+        "Please phone to me tomorrow.",
+        "We are thinking about open a new shop.",
+        "We are waiting for your reply."
+      ],
+      "correct": [
+        4
+      ],
+      "time": 30
+    }
+  ]
+}

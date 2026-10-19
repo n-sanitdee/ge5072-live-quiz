@@ -1,0 +1,42 @@
+{
+  "title": "Layout test (long texts)",
+  "questions": [
+    {
+      "q": "Layout check: this dummy question is as long as the spreadsheet allows, so we can see how a full 120-character line wrap",
+      "answers": [
+        "Dummy answer A, written to be exactly seventy-five characters long for test",
+        "Dummy answer B, written to be exactly seventy-five characters long for test",
+        "Dummy answer C, written to be exactly seventy-five characters long for test",
+        "Dummy answer D, written to be exactly seventy-five characters long for test"
+      ],
+      "correct": [
+        1
+      ],
+      "time": 20
+    },
+    {
+      "q": "Layout check: a question with only two answers.",
+      "answers": [
+        "Dummy 1 (correct)",
+        "Dummy 2"
+      ],
+      "correct": [
+        1
+      ],
+      "time": 15
+    },
+    {
+      "q": "ทดสอบภาษาไทย: dummy question with Thai text.",
+      "answers": [
+        "ตัวเลือก 1 (correct)",
+        "ตัวเลือก 2",
+        "ตัวเลือก 3",
+        "ตัวเลือก 4"
+      ],
+      "correct": [
+        1
+      ],
+      "time": 15
+    }
+  ]
+}

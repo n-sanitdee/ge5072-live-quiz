@@ -1,0 +1,32 @@
+{
+  "name": "ge5072-live-quiz",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --port=5173",
+    "dev:emu": "VITE_USE_EMULATOR=1 vite --port=5173",
+    "emulators": "sh scripts/emulators.sh",
+    "build": "vite build",
+    "preview": "vite preview --port=4173",
+    "lint": "tsc --noEmit",
+    "sets": "node scripts/xlsx-to-json.ts"
+  },
+  "dependencies": {
+    "fflate": "^0.8.3",
+    "firebase": "^12.19.0",
+    "qrcode-generator": "^2.0.4",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.5",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@vitejs/plugin-react": "^6.1.2",
+    "firebase-tools": "^15.33.0",
+    "playwright": "^1.64.1",
+    "typescript": "^7.0.2",
+    "vite": "^8.3.4"
+  }
+}

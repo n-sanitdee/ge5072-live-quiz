@@ -1,0 +1,9 @@
+node_modules
+dist
+*.log
+.firebase
+firebase-debug*.log
+database-debug.log
+tests/out
+.DS_Store
+tests/tmp

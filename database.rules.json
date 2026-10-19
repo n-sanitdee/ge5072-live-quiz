@@ -1,0 +1,113 @@
+{
+  "rules": {
+    ".read": false,
+    ".write": false,
+    "index": {
+      ".read": "auth != null && query.orderByChild == 'createdAt' && query.limitToFirst <= 100",
+      ".indexOn": [
+        "createdAt"
+      ],
+      "$pin": {
+        ".write": "auth != null && ((!data.exists() && newData.child('hostUid').val() == auth.uid) || (!newData.exists() && (!data.exists() || data.child('hostUid').val() == auth.uid || data.child('createdAt').val() < now - 10800000)))",
+        ".validate": "$pin.matches(/^[0-9]{6}$/) && newData.hasChildren(['hostUid', 'createdAt'])",
+        "hostUid": {
+          ".validate": "newData.isString()"
+        },
+        "createdAt": {
+          ".validate": "newData.val() == now"
+        },
+        "$other": {
+          ".validate": false
+        }
+      }
+    },
+    "games": {
+      "$pin": {
+        ".write": "auth != null && ((!data.exists() && newData.child('meta/hostUid').val() == auth.uid) || (!newData.exists() && (!data.exists() || data.child('meta/hostUid').val() == auth.uid || data.child('meta/createdAt').val() < now - 10800000)))",
+        ".validate": "$pin.matches(/^[0-9]{6}$/) && newData.hasChild('meta')",
+        "meta": {
+          ".read": "auth != null",
+          ".validate": "newData.hasChildren(['hostUid', 'createdAt'])",
+          "hostUid": {
+            ".validate": "newData.val() == auth.uid"
+          },
+          "createdAt": {
+            ".validate": "newData.val() == now"
+          },
+          "$other": {
+            ".validate": false
+          }
+        },
+        "host": {
+          ".read": "auth != null && root.child('games').child($pin).child('meta/hostUid').val() == auth.uid",
+          ".write": "auth != null && root.child('games').child($pin).child('meta/hostUid').val() == auth.uid"
+        },
+        "pub": {
+          ".read": true,
+          ".write": "auth != null && root.child('games').child($pin).child('meta/hostUid').val() == auth.uid"
+        },
+        "kicked": {
+          ".read": "auth != null && root.child('games').child($pin).child('meta/hostUid').val() == auth.uid",
+          ".write": "auth != null && root.child('games').child($pin).child('meta/hostUid').val() == auth.uid"
+        },
+        "results": {
+          ".read": "auth != null && root.child('games').child($pin).child('meta/hostUid').val() == auth.uid",
+          ".write": "auth != null && root.child('games').child($pin).child('meta/hostUid').val() == auth.uid",
+          "$pid": {
+            ".read": true
+          }
+        },
+        "players": {
+          ".read": "auth != null && root.child('games').child($pin).child('meta/hostUid').val() == auth.uid",
+          "$pid": {
+            ".read": true,
+            ".write": "(auth != null && root.child('games').child($pin).child('meta/hostUid').val() == auth.uid) || (!data.exists() && newData.exists() && !root.child('games').child($pin).child('kicked').child($pid).exists() && root.child('games').child($pin).child('pub/settings/locked').val() != true && root.child('games').child($pin).child('pub/state/phase').val() != 'podium' && (root.child('games').child($pin).child('pub/state/phase').val() == 'lobby' || root.child('games').child($pin).child('pub/settings/lateJoin').val() == true))",
+            ".validate": "$pid.matches(/^[A-Za-z0-9]{20}$/) && newData.hasChildren(['name', 'joinedAt'])",
+            "name": {
+              ".validate": "newData.isString() && newData.val().length >= 1 && newData.val().length <= 15 && !newData.val().contains('.') && !newData.val().contains('$') && !newData.val().contains('#') && !newData.val().contains('[') && !newData.val().contains(']') && !newData.val().contains('/') && (data.exists() ? newData.val() == data.val() : newData.parent().parent().parent().child('names').child(newData.val().toLowerCase().replace(' ', '')).val() == $pid)"
+            },
+            "joinedAt": {
+              ".validate": "data.exists() ? newData.val() == data.val() : newData.val() == now"
+            },
+            "on": {
+              ".write": "data.parent().child('name').exists() && !root.child('games').child($pin).child('kicked').child($pid).exists()",
+              ".validate": "newData.val() == true"
+            },
+            "$other": {
+              ".validate": false
+            }
+          }
+        },
+        "names": {
+          ".read": "auth != null && root.child('games').child($pin).child('meta/hostUid').val() == auth.uid",
+          "$key": {
+            ".write": "(auth != null && root.child('games').child($pin).child('meta/hostUid').val() == auth.uid) || (!data.exists() && newData.isString() && !root.child('games').child($pin).child('players').child(newData.val()).exists() && newData.parent().parent().child('players').child(newData.val()).child('name').val().toLowerCase().replace(' ', '') == $key)",
+            ".validate": "newData.isString()"
+          }
+        },
+        "answers": {
+          ".read": "auth != null && root.child('games').child($pin).child('meta/hostUid').val() == auth.uid",
+          "$qk": {
+            "$pid": {
+              ".read": true,
+              ".write": "!data.exists() && newData.exists() && root.child('games').child($pin).child('players').child($pid).child('name').exists() && root.child('games').child($pin).child('pub/state/phase').val() == 'question' && root.child('games').child($pin).child('pub/state/qk').val() == $qk && now >= root.child('games').child($pin).child('pub/state/startAt').val() && now <= root.child('games').child($pin).child('pub/state/startAt').val() + root.child('games').child($pin).child('pub/state/limitMs').val() + 2000",
+              ".validate": "newData.hasChildren(['c', 't'])",
+              "c": {
+                ".validate": "newData.isNumber() && newData.val() >= 0 && newData.val() <= 3 && newData.val() % 1 == 0"
+              },
+              "t": {
+                ".validate": "newData.val() == now"
+              },
+              "$other": {
+                ".validate": false
+              }
+            }
+          }
+        },
+        "$other": {
+          ".validate": false
+        }
+      }
+    }
+  }
+}
