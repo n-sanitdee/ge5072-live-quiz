@@ -2,12 +2,12 @@
   "title": "AC21 · GE5072/072 Pop Quiz Warm-Up (1/2026)",
   "questions": [
     {
-      "q": "Which sentence would you use in a LESS formal email?",
+      "q": "Your teammate emails: 'Lunch on Friday?' Which reply matches the register?",
       "answers": [
-        "I look forward to hearing from you.",
-        "Let me know what you think!",
-        "I would appreciate a reply at your earliest convenience.",
-        "Please contact me if you require further information."
+        "I would be delighted to accept your kind invitation.",
+        "Sounds great – see you then!",
+        "Please be advised that I am available on Friday.",
+        "I am writing to confirm that I will attend."
       ],
       "correct": [
         2
@@ -15,12 +15,12 @@
       "time": 30
     },
     {
-      "q": "Huge turbines on the hills of Lopburi turn moving air into ______.",
+      "q": "The power went off, but the hospital's generator gave ______ for six hours.",
       "answers": [
-        "backup power",
         "power cut",
-        "wind energy",
-        "greenhouse gases"
+        "global warming",
+        "backup power",
+        "wind energy"
       ],
       "correct": [
         3
@@ -28,12 +28,12 @@
       "time": 20
     },
     {
-      "q": "Choose the correct passive sentence.",
+      "q": "Every customer's bag ______ at the entrance.",
       "answers": [
-        "The staff were given a bonus in December.",
-        "Thai silk is make in many villages.",
-        "The cars is checked before delivery.",
-        "The order sent to Laos yesterday."
+        "is checked",
+        "checks",
+        "is checking",
+        "checked"
       ],
       "correct": [
         1
@@ -41,7 +41,7 @@
       "time": 30
     },
     {
-      "q": "Somchai ______ his ankle while he ______ for the bus.",
+      "q": "Arthit ______ his ankle while he ______ for the bus.",
       "answers": [
         "was hurting / ran",
         "hurt / ran",
@@ -54,7 +54,7 @@
       "time": 20
     },
     {
-      "q": "It's already in the budget: we ______ new laptops for the sales team in July.",
+      "q": "The money is already in the budget, so we ______ new laptops for every salesperson.",
       "answers": [
         "buy",
         "will buy",
@@ -93,12 +93,12 @@
       "time": 30
     },
     {
-      "q": "A language school in Bangkok teaches English to office workers. It belongs to the ______ sector.",
+      "q": "Which worker is in the TERTIARY sector?",
       "answers": [
-        "primary",
-        "tertiary",
-        "secondary",
-        "industry"
+        "a rice farmer",
+        "a tour guide",
+        "a car factory worker",
+        "a miner"
       ],
       "correct": [
         2
@@ -106,12 +106,12 @@
       "time": 20
     },
     {
-      "q": "'Order no. 5521 is for 400 bags of rice at ฿900 per bag.' In the letter, this part is the…",
+      "q": "In a letter confirming an order, which part comes just before 'Yours sincerely,'?",
       "answers": [
-        "Order details",
-        "Payment",
-        "Enclosures",
-        "Opening"
+        "Ending",
+        "Delivery details",
+        "Greeting",
+        "Order details"
       ],
       "correct": [
         1
@@ -145,7 +145,7 @@
       "time": 30
     },
     {
-      "q": "Lek found ฿5,000 in a taxi and gave it back to the driver. Everyone praised his ______.",
+      "q": "Lek found ฿5,000 in a taxi and gave it back to the driver. That kind of ______ is rare.",
       "answers": [
         "honesty",
         "honest",

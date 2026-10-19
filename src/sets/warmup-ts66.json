@@ -2,17 +2,17 @@
   "title": "TS66 · GE5072/072 Pop Quiz Warm-Up (1/2026)",
   "questions": [
     {
-      "q": "While Nida ______ the invoices, the printer suddenly ______.",
+      "q": "The printer suddenly ______ while Nida ______ the invoices.",
       "answers": [
-        "printed / was stopping",
-        "was printing / stopped",
-        "were printing / stopped",
-        "was printing / was stopping"
+        "was stopping / printed",
+        "stopped / was printing",
+        "stopped / were printing",
+        "was stopping / was printing"
       ],
       "correct": [
         2
       ],
-      "time": 30
+      "time": 20
     },
     {
       "q": "Which business is in the SECONDARY sector?",
@@ -25,15 +25,15 @@
       "correct": [
         4
       ],
-      "time": 30
+      "time": 20
     },
     {
-      "q": "Thais are drinking more oat milk. Its ______ rose by 15% last year.",
+      "q": "A car maker changed its seats and air-con for hot countries. This ______ helped it sell more cars in Asia.",
       "answers": [
-        "consumption",
-        "consume",
-        "consumable",
-        "consumed"
+        "adaptation",
+        "adapt",
+        "adaptable",
+        "adapted"
       ],
       "correct": [
         1
@@ -51,28 +51,28 @@
       "correct": [
         3
       ],
-      "time": 20
+      "time": 30
     },
     {
-      "q": "'I can't finish this report on my own.' 'Why don't you ______ Nok for help?'",
+      "q": "'My phone bill is huge this month.' 'You shouldn't ______ so many videos on mobile data.'",
       "answers": [
-        "ask",
-        "to ask",
-        "asking",
-        "asked"
+        "watch",
+        "to watch",
+        "watching",
+        "watched"
       ],
       "correct": [
         1
       ],
-      "time": 20
+      "time": 30
     },
     {
-      "q": "The board approved the plan last week. We ______ a new branch in Khon Kaen next year.",
+      "q": "Bee has saved money for two years and found a shop, so she ______ her own bakery in Pai.",
       "answers": [
         "will open",
-        "are going to open",
-        "open",
-        "opens"
+        "is going to open",
+        "opens",
+        "open"
       ],
       "correct": [
         2
@@ -80,12 +80,12 @@
       "time": 20
     },
     {
-      "q": "'If you have any questions, please do not hesitate to call us.' Which part of the letter is this?",
+      "q": "In a letter confirming an order, which part comes straight after 'Dear Ms Suda,'?",
       "answers": [
-        "Opening",
-        "Payment terms",
+        "Closing",
         "Enclosures",
-        "Ending"
+        "Payment terms",
+        "Opening"
       ],
       "correct": [
         4
@@ -93,12 +93,12 @@
       "time": 30
     },
     {
-      "q": "Kanya has not missed a deadline in five years. Her manager values her ______.",
+      "q": "Fah talks about her designs all day and works on them at weekends. Everyone can see her ______ for fashion.",
       "answers": [
-        "reliable",
-        "reliably",
-        "reliability",
-        "rely"
+        "passionate",
+        "passionately",
+        "passion",
+        "passionated"
       ],
       "correct": [
         3
@@ -119,17 +119,17 @@
       "time": 20
     },
     {
-      "q": "Which sign-off fits a FORMAL email to a manager you have never met?",
+      "q": "Three of these are informal. Which one is FORMAL?",
       "answers": [
-        "Bye for now,",
-        "Best wishes,",
-        "See you soon,",
-        "Kind regards,"
+        "Thanks for your email!",
+        "See you soon!",
+        "Just a quick note about Friday.",
+        "I would be grateful for your help."
       ],
       "correct": [
         4
       ],
-      "time": 20
+      "time": 30
     },
     {
       "q": "'The visitors are waiting in the lobby.' 'Oh! I ______ down and meet them right now.'",
@@ -145,17 +145,17 @@
       "time": 20
     },
     {
-      "q": "The new office ______ by a Japanese architect in 2023.",
+      "q": "Every parcel ______ by hand before it leaves our warehouse.",
       "answers": [
-        "is designed",
-        "designed",
-        "was designed",
-        "was design"
+        "packs",
+        "is packing",
+        "is packed",
+        "packed"
       ],
       "correct": [
         3
       ],
-      "time": 20
+      "time": 30
     }
   ]
 }

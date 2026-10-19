@@ -15,12 +15,12 @@
       "time": 20
     },
     {
-      "q": "Which passive sentence is correct?",
+      "q": "Every year, thousands of durians ______ to China.",
       "answers": [
-        "The new price list is print every January.",
-        "Most of our mangoes are exported to China.",
-        "The shipment were delayed by the storm.",
-        "The training was hold in Room 5 last Friday."
+        "ship",
+        "are shipped",
+        "are shipping",
+        "shipped"
       ],
       "correct": [
         2
@@ -28,12 +28,12 @@
       "time": 30
     },
     {
-      "q": "While we ______ lunch in the canteen, an important customer ______ the office.",
+      "q": "Mr Somsak ______ his laptop while he ______ off the train.",
       "answers": [
-        "were having / called",
-        "had / was calling",
-        "was having / called",
-        "were having / was calling"
+        "dropped / was getting",
+        "was dropping / got",
+        "dropped / were getting",
+        "was dropping / was getting"
       ],
       "correct": [
         1
@@ -41,7 +41,7 @@
       "time": 20
     },
     {
-      "q": "Ploy always asks for extra tasks and takes online courses at night. She has a lot of ______.",
+      "q": "Ploy asks for extra tasks and takes online courses at night. With so much ______, she will soon get a promotion.",
       "answers": [
         "motivate",
         "motivated",
@@ -54,7 +54,7 @@
       "time": 20
     },
     {
-      "q": "In an order confirmation letter, 'Yours sincerely,' comes just before your name. What is this part called?",
+      "q": "In a letter confirming an order, 'Yours sincerely,' comes just before your name. What is this part called?",
       "answers": [
         "Closing",
         "Ending",
@@ -80,12 +80,12 @@
       "time": 20
     },
     {
-      "q": "A Chiang Mai company plans weddings and office parties for its clients. It is part of the ______ sector.",
+      "q": "Which worker is in the SECONDARY sector?",
       "answers": [
-        "primary",
-        "secondary",
-        "tertiary",
-        "industry"
+        "a rice farmer",
+        "a hotel receptionist",
+        "a car factory worker",
+        "a hairdresser"
       ],
       "correct": [
         3
@@ -93,12 +93,12 @@
       "time": 20
     },
     {
-      "q": "Your friend always runs out of money before payday. Which suggestion is grammatically correct?",
+      "q": "'My laptop is very slow.' 'You could ______ some old files.'",
       "answers": [
-        "You ought save a little money every month.",
-        "Why not cook at home more often?",
-        "What about take the bus instead of a taxi?",
-        "You shouldn't to buy coffee every day."
+        "deleting",
+        "delete",
+        "to delete",
+        "deleted"
       ],
       "correct": [
         2
@@ -106,12 +106,12 @@
       "time": 30
     },
     {
-      "q": "You're sending a quick email to a teammate you know well. Which sentence fits best?",
+      "q": "Which is the LEAST formal way to ask for the report?",
       "answers": [
-        "Hi Ben, can we meet at 3 instead of 2?",
-        "We wish to advise you that the meeting has been rescheduled.",
-        "I would be grateful if you could confirm the new time.",
-        "Please accept my apologies for any inconvenience caused."
+        "Can you send me the report?",
+        "Could you kindly forward the report?",
+        "I would appreciate receiving the report.",
+        "I would be grateful if you could send me the report."
       ],
       "correct": [
         1
@@ -135,8 +135,8 @@
       "q": "Which sentence uses the verb and preposition correctly?",
       "answers": [
         "We answered to all of their emails.",
-        "Mali applied for a job in our Marketing team.",
-        "We look forward to meet you on Friday.",
+        "Pim applied for a job in our Sales team.",
+        "Please wait me at the gate.",
         "The guests arrived to the hotel at noon."
       ],
       "correct": [
@@ -145,12 +145,12 @@
       "time": 30
     },
     {
-      "q": "It's all arranged and the posters are printed. We ______ our new coconut drink at the trade fair in May.",
+      "q": "I've already bought the bus ticket, so I ______ my grandparents in Nan this weekend.",
       "answers": [
-        "launch",
-        "will launch",
-        "are going to launch",
-        "launches"
+        "visit",
+        "will visit",
+        "am going to visit",
+        "visits"
       ],
       "correct": [
         3
