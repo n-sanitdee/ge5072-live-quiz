@@ -18,7 +18,8 @@ install anything or log in.
 **Before class:** open the teacher link on the projector laptop (bookmark it). Use Chrome, Edge or Safari, and
 press ⛶ for full screen.
 
-1. **Pick a question set.** The built-in *Pop Quiz Warm-Up (1/2026)* is ready. To use another set, click
+1. **Pick a question set.** Click the built-in warm-up whose name starts with your section code (BS11, TS66,
+   CA50, AC21; CA48 + EC30 already played theirs). Each section has its own set. To use another set, click
    **Load a file** and choose a `.xlsx` in the Kahoot-style template (header on row 8, questions from row 9:
    question, answers 1–4, time limit, correct answer number) or a `.json` set. A loaded file stays in this browser
    only; phones get each question when it is shown, and the correct answer only after time is up.
@@ -58,7 +59,7 @@ the database server's clock, so a phone with a wrong clock can't gain or lose ti
 ## Question sets
 
 Built-in sets live in [`src/sets/`](src/sets/) and are listed in [`src/sets/index.ts`](src/sets/index.ts).
-**This repository is public: only add sets that are safe to publish.** Real quiz sets should be loaded from a
+**This repository is public, so anyone can read the built-in warm-up sets and their answers.** Real quiz sets should be loaded from a
 file on the host screen instead.
 
 JSON format (answer numbers start at 1, like the spreadsheet; 2–4 answers; time 5–240 s):

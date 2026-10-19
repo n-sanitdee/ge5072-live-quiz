@@ -1,0 +1,161 @@
+{
+  "title": "AC21 · GE5072/072 Pop Quiz Warm-Up (1/2026)",
+  "questions": [
+    {
+      "q": "Which sentence would you use in a LESS formal email?",
+      "answers": [
+        "I look forward to hearing from you.",
+        "Let me know what you think!",
+        "I would appreciate a reply at your earliest convenience.",
+        "Please contact me if you require further information."
+      ],
+      "correct": [
+        2
+      ],
+      "time": 30
+    },
+    {
+      "q": "Huge turbines on the hills of Lopburi turn moving air into ______.",
+      "answers": [
+        "backup power",
+        "power cut",
+        "wind energy",
+        "greenhouse gases"
+      ],
+      "correct": [
+        3
+      ],
+      "time": 20
+    },
+    {
+      "q": "Choose the correct passive sentence.",
+      "answers": [
+        "The staff were given a bonus in December.",
+        "Thai silk is make in many villages.",
+        "The cars is checked before delivery.",
+        "The order sent to Laos yesterday."
+      ],
+      "correct": [
+        1
+      ],
+      "time": 30
+    },
+    {
+      "q": "Somchai ______ his ankle while he ______ for the bus.",
+      "answers": [
+        "was hurting / ran",
+        "hurt / ran",
+        "was hurting / was running",
+        "hurt / was running"
+      ],
+      "correct": [
+        4
+      ],
+      "time": 20
+    },
+    {
+      "q": "It's already in the budget: we ______ new laptops for the sales team in July.",
+      "answers": [
+        "buy",
+        "will buy",
+        "are going to buy",
+        "bought"
+      ],
+      "correct": [
+        3
+      ],
+      "time": 20
+    },
+    {
+      "q": "Our software can be set up in Thai, Lao, or Khmer in one day. Customers like its ______.",
+      "answers": [
+        "adapt",
+        "adaptable",
+        "adaptably",
+        "adaptability"
+      ],
+      "correct": [
+        4
+      ],
+      "time": 20
+    },
+    {
+      "q": "Find the correct sentence.",
+      "answers": [
+        "Please listen me carefully.",
+        "She belongs to the Finance team.",
+        "Everyone laughed to his joke.",
+        "I am thinking to change jobs."
+      ],
+      "correct": [
+        2
+      ],
+      "time": 30
+    },
+    {
+      "q": "A language school in Bangkok teaches English to office workers. It belongs to the ______ sector.",
+      "answers": [
+        "primary",
+        "tertiary",
+        "secondary",
+        "industry"
+      ],
+      "correct": [
+        2
+      ],
+      "time": 20
+    },
+    {
+      "q": "'Order no. 5521 is for 400 bags of rice at ฿900 per bag.' In the letter, this part is the…",
+      "answers": [
+        "Order details",
+        "Payment",
+        "Enclosures",
+        "Opening"
+      ],
+      "correct": [
+        1
+      ],
+      "time": 30
+    },
+    {
+      "q": "'The phone on the reception desk is ringing.' 'Stay there. I ______ it.'",
+      "answers": [
+        "answer",
+        "am going to answer",
+        "answered",
+        "will answer"
+      ],
+      "correct": [
+        4
+      ],
+      "time": 20
+    },
+    {
+      "q": "'I always feel tired at my desk after lunch.' 'What about ______ a short walk?'",
+      "answers": [
+        "take",
+        "to take",
+        "taking",
+        "took"
+      ],
+      "correct": [
+        3
+      ],
+      "time": 30
+    },
+    {
+      "q": "Lek found ฿5,000 in a taxi and gave it back to the driver. Everyone praised his ______.",
+      "answers": [
+        "honesty",
+        "honest",
+        "honestly",
+        "honestness"
+      ],
+      "correct": [
+        1
+      ],
+      "time": 20
+    }
+  ]
+}
