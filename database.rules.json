@@ -164,6 +164,9 @@
           "photo": {
             ".validate": "newData.isBoolean() && (!data.exists() || newData.val() == data.val())"
           },
+          "live": {
+            ".validate": "newData.isBoolean() && (!data.exists() || newData.val() == data.val())"
+          },
           "revealed": {
             ".validate": "newData.isBoolean() && (data.val() != true || newData.val() == true)"
           },
@@ -189,7 +192,7 @@
           }
         },
         "teams": {
-          ".read": "(auth != null && root.child('walls').child($code).child('meta/hostUid').val() == auth.uid) || root.child('walls').child($code).child('pub/revealed').val() == true",
+          ".read": "(auth != null && root.child('walls').child($code).child('meta/hostUid').val() == auth.uid) || (root.child('walls').child($code).child('pub/revealed').val() == true || root.child('walls').child($code).child('pub/live').val() == true)",
           "$tid": {
             ".read": true,
             ".write": "(auth != null && root.child('walls').child($code).child('meta/hostUid').val() == auth.uid) || (!data.exists() && newData.exists() && !root.child('walls').child($code).child('kicked').child($tid).exists() && root.child('walls').child($code).child('pub/locked').val() != true && root.child('walls').child($code).child('pub/revealed').val() != true && root.child('walls').child($code).child('pub/ended').val() != true)",
@@ -219,8 +222,16 @@
             ".read": true
           }
         },
+        "assign": {
+          ".read": "(auth != null && root.child('walls').child($code).child('meta/hostUid').val() == auth.uid) || (root.child('walls').child($code).child('pub/revealed').val() == true || root.child('walls').child($code).child('pub/live').val() == true)",
+          ".write": "auth != null && root.child('walls').child($code).child('meta/hostUid').val() == auth.uid",
+          "$tid": {
+            ".read": true,
+            ".validate": "newData.isNumber() && newData.val() >= 0 && newData.val() <= 9 && newData.val() % 1 == 0"
+          }
+        },
         "posts": {
-          ".read": "(auth != null && root.child('walls').child($code).child('meta/hostUid').val() == auth.uid) || root.child('walls').child($code).child('pub/revealed').val() == true",
+          ".read": "(auth != null && root.child('walls').child($code).child('meta/hostUid').val() == auth.uid) || (root.child('walls').child($code).child('pub/revealed').val() == true || root.child('walls').child($code).child('pub/live').val() == true)",
           "$tid": {
             ".read": true,
             ".write": "(auth != null && root.child('walls').child($code).child('meta/hostUid').val() == auth.uid) || (root.child('walls').child($code).child('teams').child($tid).child('name').exists() && !root.child('walls').child($code).child('kicked').child($tid).exists() && root.child('walls').child($code).child('pub/revealed').val() != true && root.child('walls').child($code).child('pub/ended').val() != true)",
@@ -233,11 +244,11 @@
             },
             "fields": {
               "$f": {
-                ".validate": "$f.matches(/^f[0-9]$/) && newData.isString() && newData.val().length >= 1 && newData.val().length <= 300"
+                ".validate": "$f.matches(/^[fb][0-9]$/) && newData.isString() && newData.val().length >= 1 && newData.val().length <= 400"
               }
             },
             "choice": {
-              ".validate": "newData.isNumber() && newData.val() >= 0 && newData.val() <= 9 && newData.val() % 1 == 0"
+              ".validate": "newData.isNumber() && newData.val() >= 0 && newData.val() <= 9 && newData.val() % 1 == 0 && (!root.child('walls').child($code).child('assign').child($tid).exists() || newData.val() == root.child('walls').child($code).child('assign').child($tid).val())"
             },
             "photo": {
               ".validate": "newData.val() == true && root.child('walls').child($code).child('pub/photo').val() == true && newData.parent().parent().parent().child('photos').child($tid).exists() && newData.parent().parent().parent().child('thumbs').child($tid).exists()"
@@ -248,7 +259,7 @@
           }
         },
         "thumbs": {
-          ".read": "(auth != null && root.child('walls').child($code).child('meta/hostUid').val() == auth.uid) || root.child('walls').child($code).child('pub/revealed').val() == true",
+          ".read": "(auth != null && root.child('walls').child($code).child('meta/hostUid').val() == auth.uid) || (root.child('walls').child($code).child('pub/revealed').val() == true || root.child('walls').child($code).child('pub/live').val() == true)",
           "$tid": {
             ".read": true,
             ".write": "(auth != null && root.child('walls').child($code).child('meta/hostUid').val() == auth.uid) || (root.child('walls').child($code).child('teams').child($tid).child('name').exists() && !root.child('walls').child($code).child('kicked').child($tid).exists() && root.child('walls').child($code).child('pub/revealed').val() != true && root.child('walls').child($code).child('pub/ended').val() != true)",
@@ -256,7 +267,7 @@
           }
         },
         "photos": {
-          ".read": "(auth != null && root.child('walls').child($code).child('meta/hostUid').val() == auth.uid) || root.child('walls').child($code).child('pub/revealed').val() == true",
+          ".read": "(auth != null && root.child('walls').child($code).child('meta/hostUid').val() == auth.uid) || (root.child('walls').child($code).child('pub/revealed').val() == true || root.child('walls').child($code).child('pub/live').val() == true)",
           "$tid": {
             ".read": true,
             ".write": "(auth != null && root.child('walls').child($code).child('meta/hostUid').val() == auth.uid) || (root.child('walls').child($code).child('teams').child($tid).child('name').exists() && !root.child('walls').child($code).child('kicked').child($tid).exists() && root.child('walls').child($code).child('pub/revealed').val() != true && root.child('walls').child($code).child('pub/ended').val() != true)",
