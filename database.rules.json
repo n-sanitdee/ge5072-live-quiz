@@ -108,6 +108,165 @@
           ".validate": false
         }
       }
+    },
+    "wallIndex": {
+      ".read": "auth != null && query.orderByChild == 'createdAt' && query.limitToFirst <= 100",
+      ".indexOn": [
+        "createdAt"
+      ],
+      "$code": {
+        ".write": "auth != null && ((!data.exists() && newData.child('hostUid').val() == auth.uid) || (!newData.exists() && (!data.exists() || data.child('hostUid').val() == auth.uid || data.child('createdAt').val() < now - 10800000)))",
+        ".validate": "$code.matches(/^[0-9]{6}$/) && newData.hasChildren(['hostUid', 'createdAt'])",
+        "hostUid": {
+          ".validate": "newData.isString()"
+        },
+        "createdAt": {
+          ".validate": "newData.val() == now"
+        },
+        "$other": {
+          ".validate": false
+        }
+      }
+    },
+    "walls": {
+      "$code": {
+        ".write": "auth != null && ((!data.exists() && newData.child('meta/hostUid').val() == auth.uid) || (!newData.exists() && (!data.exists() || data.child('meta/hostUid').val() == auth.uid || data.child('meta/createdAt').val() < now - 10800000)))",
+        ".validate": "$code.matches(/^[0-9]{6}$/) && newData.hasChildren(['meta', 'pub'])",
+        "meta": {
+          ".read": "auth != null",
+          ".validate": "newData.hasChildren(['hostUid', 'createdAt'])",
+          "hostUid": {
+            ".validate": "newData.val() == auth.uid"
+          },
+          "createdAt": {
+            ".validate": "newData.val() == now"
+          },
+          "$other": {
+            ".validate": false
+          }
+        },
+        "pub": {
+          ".read": true,
+          ".write": "auth != null && root.child('walls').child($code).child('meta/hostUid').val() == auth.uid",
+          ".validate": "newData.hasChildren(['title', 'preset', 'section', 'photo', 'revealed'])",
+          "title": {
+            ".validate": "newData.isString() && newData.val().length <= 120"
+          },
+          "prompt": {
+            ".validate": "newData.isString() && newData.val().length <= 600"
+          },
+          "preset": {
+            ".validate": "newData.isString() && newData.val().length <= 40"
+          },
+          "section": {
+            ".validate": "newData.isString() && newData.val().length <= 20"
+          },
+          "photo": {
+            ".validate": "newData.isBoolean() && (!data.exists() || newData.val() == data.val())"
+          },
+          "revealed": {
+            ".validate": "newData.isBoolean() && (data.val() != true || newData.val() == true)"
+          },
+          "locked": {
+            ".validate": "newData.isBoolean()"
+          },
+          "ended": {
+            ".validate": "newData.isBoolean()"
+          },
+          "fixes": {
+            ".validate": "newData.isBoolean()"
+          },
+          "expected": {
+            ".validate": "newData.isNumber() && newData.val() >= 0 && newData.val() <= 200 && newData.val() % 1 == 0"
+          },
+          "roster": {
+            "$i": {
+              ".validate": "newData.hasChildren(['n', 'p'])"
+            }
+          },
+          "$other": {
+            ".validate": false
+          }
+        },
+        "teams": {
+          ".read": "(auth != null && root.child('walls').child($code).child('meta/hostUid').val() == auth.uid) || root.child('walls').child($code).child('pub/revealed').val() == true",
+          "$tid": {
+            ".read": true,
+            ".write": "(auth != null && root.child('walls').child($code).child('meta/hostUid').val() == auth.uid) || (!data.exists() && newData.exists() && !root.child('walls').child($code).child('kicked').child($tid).exists() && root.child('walls').child($code).child('pub/locked').val() != true && root.child('walls').child($code).child('pub/revealed').val() != true && root.child('walls').child($code).child('pub/ended').val() != true)",
+            ".validate": "$tid.matches(/^[A-Za-z0-9]{20}$/) && newData.hasChildren(['name', 'joinedAt'])",
+            "name": {
+              ".validate": "newData.isString() && newData.val().length >= 1 && newData.val().length <= 24 && !newData.val().contains('.') && !newData.val().contains('$') && !newData.val().contains('#') && !newData.val().contains('[') && !newData.val().contains(']') && !newData.val().contains('/') && (data.exists() ? newData.val() == data.val() : newData.parent().parent().parent().child('names').child(newData.val().toLowerCase().replace(' ', '')).val() == $tid)"
+            },
+            "joinedAt": {
+              ".validate": "data.exists() ? newData.val() == data.val() : newData.val() == now"
+            },
+            "$other": {
+              ".validate": false
+            }
+          }
+        },
+        "names": {
+          ".read": "auth != null && root.child('walls').child($code).child('meta/hostUid').val() == auth.uid",
+          "$key": {
+            ".write": "(auth != null && root.child('walls').child($code).child('meta/hostUid').val() == auth.uid) || (!data.exists() && newData.isString() && !root.child('walls').child($code).child('teams').child(newData.val()).exists() && newData.parent().parent().child('teams').child(newData.val()).child('name').val().toLowerCase().replace(' ', '') == $key)",
+            ".validate": "newData.isString()"
+          }
+        },
+        "kicked": {
+          ".read": "auth != null && root.child('walls').child($code).child('meta/hostUid').val() == auth.uid",
+          ".write": "auth != null && root.child('walls').child($code).child('meta/hostUid').val() == auth.uid",
+          "$tid": {
+            ".read": true
+          }
+        },
+        "posts": {
+          ".read": "(auth != null && root.child('walls').child($code).child('meta/hostUid').val() == auth.uid) || root.child('walls').child($code).child('pub/revealed').val() == true",
+          "$tid": {
+            ".read": true,
+            ".write": "(auth != null && root.child('walls').child($code).child('meta/hostUid').val() == auth.uid) || (root.child('walls').child($code).child('teams').child($tid).child('name').exists() && !root.child('walls').child($code).child('kicked').child($tid).exists() && root.child('walls').child($code).child('pub/revealed').val() != true && root.child('walls').child($code).child('pub/ended').val() != true)",
+            ".validate": "newData.hasChild('at') && (newData.hasChild('text') || newData.hasChild('fields') || newData.hasChild('photo'))",
+            "at": {
+              ".validate": "newData.val() == now"
+            },
+            "text": {
+              ".validate": "newData.isString() && newData.val().length >= 1 && newData.val().length <= 1000"
+            },
+            "fields": {
+              "$f": {
+                ".validate": "$f.matches(/^f[0-9]$/) && newData.isString() && newData.val().length >= 1 && newData.val().length <= 300"
+              }
+            },
+            "choice": {
+              ".validate": "newData.isNumber() && newData.val() >= 0 && newData.val() <= 9 && newData.val() % 1 == 0"
+            },
+            "photo": {
+              ".validate": "newData.val() == true && root.child('walls').child($code).child('pub/photo').val() == true && newData.parent().parent().parent().child('photos').child($tid).exists() && newData.parent().parent().parent().child('thumbs').child($tid).exists()"
+            },
+            "$other": {
+              ".validate": false
+            }
+          }
+        },
+        "thumbs": {
+          ".read": "(auth != null && root.child('walls').child($code).child('meta/hostUid').val() == auth.uid) || root.child('walls').child($code).child('pub/revealed').val() == true",
+          "$tid": {
+            ".read": true,
+            ".write": "(auth != null && root.child('walls').child($code).child('meta/hostUid').val() == auth.uid) || (root.child('walls').child($code).child('teams').child($tid).child('name').exists() && !root.child('walls').child($code).child('kicked').child($tid).exists() && root.child('walls').child($code).child('pub/revealed').val() != true && root.child('walls').child($code).child('pub/ended').val() != true)",
+            ".validate": "newData.isString() && newData.val().beginsWith('data:image/jpeg;base64,') && newData.val().length <= 200000 && root.child('walls').child($code).child('pub/photo').val() == true"
+          }
+        },
+        "photos": {
+          ".read": "(auth != null && root.child('walls').child($code).child('meta/hostUid').val() == auth.uid) || root.child('walls').child($code).child('pub/revealed').val() == true",
+          "$tid": {
+            ".read": true,
+            ".write": "(auth != null && root.child('walls').child($code).child('meta/hostUid').val() == auth.uid) || (root.child('walls').child($code).child('teams').child($tid).child('name').exists() && !root.child('walls').child($code).child('kicked').child($tid).exists() && root.child('walls').child($code).child('pub/revealed').val() != true && root.child('walls').child($code).child('pub/ended').val() != true)",
+            ".validate": "newData.isString() && newData.val().beginsWith('data:image/jpeg;base64,') && newData.val().length <= 1500000 && root.child('walls').child($code).child('pub/photo').val() == true"
+          }
+        },
+        "$other": {
+          ".validate": false
+        }
+      }
     }
   }
 }
