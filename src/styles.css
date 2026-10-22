@@ -539,6 +539,16 @@ input {
   gap: 8px;
   margin-bottom: 12px;
 }
+.set-group {
+  margin: 6px 0 0;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: var(--card-muted);
+}
+.set-group:first-child {
+  margin-top: 0;
+}
 .set-item {
   display: flex;
   gap: 10px;

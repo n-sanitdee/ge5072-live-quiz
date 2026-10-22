@@ -1,4 +1,4 @@
-import {type ReactNode, useCallback, useEffect, useMemo, useRef, useState} from 'react';
+import {Fragment, type ReactNode, useCallback, useEffect, useMemo, useRef, useState} from 'react';
 import {onValue, ref} from 'firebase/database';
 import {backend, configured} from '../backend.ts';
 import {openDatabase, signInHost} from '../game/fb.ts';
@@ -236,14 +236,17 @@ function Setup({
         <section className="card">
           <h2>1. Question set</h2>
           <div className="set-list">
-            {BUILT_IN_SETS.map((s) => (
-              <label key={s.id} className={`set-item ${choice === s.id ? 'on' : ''}`}>
-                <input type="radio" name="set" checked={choice === s.id} onChange={() => setChoice(s.id)} />
-                <span>
-                  <b>{s.set.title}</b>
-                  <small>{s.set.questions.length} questions · built in</small>
-                </span>
-              </label>
+            {BUILT_IN_SETS.map((s, k) => (
+              <Fragment key={s.id}>
+                {s.group !== BUILT_IN_SETS[k - 1]?.group && <h3 className="set-group">{s.group}</h3>}
+                <label className={`set-item ${choice === s.id ? 'on' : ''}`}>
+                  <input type="radio" name="set" checked={choice === s.id} onChange={() => setChoice(s.id)} />
+                  <span>
+                    <b>{s.set.title}</b>
+                    <small>{s.set.questions.length} questions · built in</small>
+                  </span>
+                </label>
+              </Fragment>
             ))}
             {custom && (
               <label className={`set-item ${choice === 'custom' ? 'on' : ''}`}>

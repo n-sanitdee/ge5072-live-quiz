@@ -1,0 +1,161 @@
+{
+  "title": "Wk14 · Verb or Noun? (Describing Trends)",
+  "questions": [
+    {
+      "q": "Sales rose ___ in March.",
+      "answers": [
+        "sharp",
+        "sharply",
+        "sharpness",
+        "a sharp"
+      ],
+      "correct": [
+        2
+      ],
+      "time": 20
+    },
+    {
+      "q": "There was a ___ rise in sales.",
+      "answers": [
+        "sharply",
+        "sharpen",
+        "sharp",
+        "sharpest"
+      ],
+      "correct": [
+        3
+      ],
+      "time": 20
+    },
+    {
+      "q": "Online orders showed steady ___.",
+      "answers": [
+        "growth",
+        "grow",
+        "grew",
+        "a growth"
+      ],
+      "correct": [
+        1
+      ],
+      "time": 20
+    },
+    {
+      "q": "There was a slight ___ in costs.",
+      "answers": [
+        "increased",
+        "increasing",
+        "increasingly",
+        "increase"
+      ],
+      "correct": [
+        4
+      ],
+      "time": 20
+    },
+    {
+      "q": "Revenue ___ every summer.",
+      "answers": [
+        "rise",
+        "rises",
+        "rising",
+        "are rising"
+      ],
+      "correct": [
+        2
+      ],
+      "time": 20
+    },
+    {
+      "q": "Sales rose ___ 1,250 ___ 1,900 cups.",
+      "answers": [
+        "at … to",
+        "in … of",
+        "from … to",
+        "of … to"
+      ],
+      "correct": [
+        3
+      ],
+      "time": 20
+    },
+    {
+      "q": "There was a rise ___ 15% in online orders.",
+      "answers": [
+        "of",
+        "in",
+        "by",
+        "to"
+      ],
+      "correct": [
+        1
+      ],
+      "time": 20
+    },
+    {
+      "q": "There was a sharp fall ___ demand.",
+      "answers": [
+        "of",
+        "by",
+        "to",
+        "in"
+      ],
+      "correct": [
+        4
+      ],
+      "time": 20
+    },
+    {
+      "q": "Which one is correct?",
+      "answers": [
+        "a significant growth",
+        "significant growth",
+        "a significantly growth",
+        "significantly growth"
+      ],
+      "correct": [
+        2
+      ],
+      "time": 20
+    },
+    {
+      "q": "Which one is a TREND sentence?",
+      "answers": [
+        "Our tea is organic.",
+        "We will open a new branch.",
+        "Sales fell slightly in July.",
+        "Customers like our tea."
+      ],
+      "correct": [
+        3
+      ],
+      "time": 30
+    },
+    {
+      "q": "Prices ___ by 10% last year.",
+      "answers": [
+        "were risen",
+        "raised",
+        "rose",
+        "rised"
+      ],
+      "correct": [
+        3
+      ],
+      "time": 20
+    },
+    {
+      "q": "Followers ___ gradually from 4,000 to 6,000 in 2025.",
+      "answers": [
+        "increased",
+        "increase",
+        "were increased",
+        "increasing"
+      ],
+      "correct": [
+        1
+      ],
+      "time": 20
+    }
+  ]
+}

@@ -1,0 +1,135 @@
+{
+  "title": "Wk13 · Sentence Check (Company Profile)",
+  "questions": [
+    {
+      "q": "Which line is a full sentence?",
+      "answers": [
+        "Local fast-food restaurant in Thailand.",
+        "Fresh food, fast service, fair prices.",
+        "Our restaurant serves Isan food.",
+        "A shop that sells Thai tea."
+      ],
+      "correct": [
+        3
+      ],
+      "time": 30
+    },
+    {
+      "q": "Sunny Tea is a Thai brand. ___ sells green tea and snacks.",
+      "answers": [
+        "They",
+        "It",
+        "Its",
+        "There"
+      ],
+      "correct": [
+        2
+      ],
+      "time": 20
+    },
+    {
+      "q": "The store ___ casual clothes for teens.",
+      "answers": [
+        "sell",
+        "selling",
+        "sells",
+        "are sell"
+      ],
+      "correct": [
+        3
+      ],
+      "time": 20
+    },
+    {
+      "q": "Our company ___ in 2020.",
+      "answers": [
+        "founded",
+        "was founded",
+        "is founding",
+        "were founded"
+      ],
+      "correct": [
+        2
+      ],
+      "time": 20
+    },
+    {
+      "q": "All our food ___ in Thailand.",
+      "answers": [
+        "are produced",
+        "produce",
+        "producing",
+        "is produced"
+      ],
+      "correct": [
+        4
+      ],
+      "time": 20
+    },
+    {
+      "q": "Forty staff ___ at the factory.",
+      "answers": [
+        "are employed",
+        "is employed",
+        "employs",
+        "was employ"
+      ],
+      "correct": [
+        1
+      ],
+      "time": 20
+    },
+    {
+      "q": "Choose the correct line.",
+      "answers": [
+        "The shop sells burger and fries.",
+        "The shop sells burgers and fries.",
+        "The shop sell burgers and fries.",
+        "The shop sells burgers' and fries."
+      ],
+      "correct": [
+        2
+      ],
+      "time": 30
+    },
+    {
+      "q": "Which punctuation is correct?",
+      "answers": [
+        "We sell tea , coffee, and cake.",
+        "We sell tea,coffee, and cake.",
+        "we sell tea, coffee, and cake",
+        "We sell tea, coffee, and cake."
+      ],
+      "correct": [
+        4
+      ],
+      "time": 30
+    },
+    {
+      "q": "Which one is correct?",
+      "answers": [
+        "We buy fabric, we sew it here.",
+        "We buy fabric. We sew it here.",
+        "We buy fabric we sew it here.",
+        "We buy fabric . We sew it here."
+      ],
+      "correct": [
+        2
+      ],
+      "time": 30
+    },
+    {
+      "q": "Which line has a capital-letter mistake?",
+      "answers": [
+        "It was founded in Chiang Mai.",
+        "Our Products are made by hand.",
+        "The shop is near Siam Square.",
+        "We sell Thai tea."
+      ],
+      "correct": [
+        2
+      ],
+      "time": 30
+    }
+  ]
+}

@@ -19,7 +19,9 @@ install anything or log in.
 press ⛶ for full screen.
 
 1. **Pick a question set.** Click the built-in warm-up whose name starts with your section code (BS11, TS66,
-   CA50, AC21; CA48 + EC30 already played theirs). Each section has its own set. To use another set, click
+   CA50, AC21; CA48 + EC30 already played theirs). Each section has its own set. The lesson sets come after the
+   warm-ups: **Wk13 · Sentence Check (Company Profile)** (10 questions) and **Wk14 · Verb or Noun? (Describing
+   Trends)** (12 questions), the same set for every section. To use another set, click
    **Load a file** and choose a `.xlsx` in the Kahoot-style template (header on row 8, questions from row 9:
    question, answers 1–4, time limit, correct answer number) or a `.json` set. A loaded file stays in this browser
    only; phones get each question when it is shown, and the correct answer only after time is up.
